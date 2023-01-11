@@ -1,4 +1,6 @@
-//*  MAPPING CREATE ITEM
+//* PAGE PANIER => AFFICHE DES ARTICLES DANS LE PANIER
+
+//* MAPPING CREATE ITEM
 function displayItems(item, data) {
   article = createArticle(item);
   imgDiv = createImg(data);
@@ -40,7 +42,7 @@ function createImg(data) {
   return imgDiv;
 }
 
-//* CREATE CONTENT
+//* CREATE CONTENT__________________________________________________
 //* DESCRIPTION AND SETTINGS ✓
 function createDescriptionSettings(item, data) {
   // HTML
@@ -131,16 +133,5 @@ function deleteSettings(item) {
     removeBasket(item);
     p3.closest(".cart__item").remove();
   });
-  //FUNCTION A PLACER DANS LE BASKET UNE FOIS TERMINER ⚠️
-  function removeBasket(item) {
-    let basket = getBasket();
-    let newBasket = basket.filter(
-      (element) => element._id !== item.id && element.color !== item.color
-    );
-    saveBasket(newBasket);
-    getNumberItem();
-    getTotalPrice();
-  }
-
   return cartDelete;
 }

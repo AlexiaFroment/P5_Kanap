@@ -1,3 +1,4 @@
+//* PAGE PRODUIT => DETAIL DU PRODUIT PAR ID
 //* VARIABLES
 let products = [];
 
@@ -14,8 +15,8 @@ async function fetchData() {
   await fetch(`http://localhost:3000/api/products/${id}`)
     .then((res) => res.json())
     .then((data) => (products = data))
-    .catch((err)=>console.log(err));
-};
+    .catch((err) => console.log(err));
+}
 
 //* DISPLAY PRODUCTS AND FEATURES
 async function fetchDisplay() {
@@ -58,7 +59,7 @@ addToCart.addEventListener("mousedown", () => {
   addToCart.style.transform = `translate(10%)`;
 });
 
-// VALUE AND NEW STYLE OF BTN UP  
+// VALUE AND NEW STYLE OF BTN UP
 addToCart.addEventListener("mouseup", () => {
   //VALUE
   const colorValue = document.querySelector("#colors");

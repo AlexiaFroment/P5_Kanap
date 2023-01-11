@@ -1,7 +1,7 @@
+//* PAGE D'ACCUEIL => RECAPITULATIF DES PRODUITS DU CATALGOGUE
 //* VARIABLES
 const url = `http://localhost:3000/api/products/`;
 let products = [];
-
 
 //* GET DATA => METHODE FETCH
 const fetchProduct = async () => {

@@ -1,3 +1,4 @@
+//* PANIER RECAPITULATIF DES ARTICLES
 //* VARIABLES
 basket = getBasket();
 let itemPrice = {};
@@ -18,7 +19,7 @@ basket.forEach(async (item, data) => {
       itemPrice[id] = data.price;
       displayItems(item, data);
     })
-    .catch((err) => console.log(err))
+    .catch((err) => console.log(err));
 
   // TOTAL PRICE
   getTotalPrice();

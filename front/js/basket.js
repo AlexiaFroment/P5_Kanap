@@ -1,3 +1,4 @@
+//* PAGE PANIER => ACTIONS SUR LE PANIER ET SES ITEMS
 //* VARIABLES
 basket = getBasket();
 const nberOfItems = basket.length;
@@ -46,13 +47,16 @@ function updateBasket(id, color, newValue) {
   getTotalPrice();
 }
 
-//* RETIRER DU PANIER => storage.removeItem
-
-// SELECTION DE L ID DES PRDTS SUPPRIMES
-// AVEC FILTER SELECTION DES ELEMENTS A GARDER
-// getNumberItem();
-// getTotalPrice();
-// saveBasket(basket);
+//* RETIRER DU PANIER => ADDEVENTLISTENER BTN SUPP MAPPING
+function removeBasket(item) {
+  let basket = getBasket();
+  let newBasket = basket.filter(
+    (element) => element._id !== item.id && element.color !== item.color
+  );
+  saveBasket(newBasket);
+  getNumberItem();
+  getTotalPrice();
+}
 
 //* CALCUL QTY ITEMS IN THE BASKET
 function getNumberItem() {

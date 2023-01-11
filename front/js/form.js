@@ -1,7 +1,4 @@
-//* VERIFIER LES DONNES DE L UTILISATEUR => MISE EN PLACE DE REGEX POUR LES VERIF
-//* REQUETE POST => ENVOI DES DONNES
-//* MESSAGE D ERREUR A CREER
-
+//* FORMULAIRE DU PANIER => A COMPLETER POUR FINALISER LA COMMANDE AVEC LA METHODE POST
 //* VARIABLES
 const btnOrder = document.getElementById("order");
 
@@ -10,7 +7,7 @@ btnOrder.addEventListener("click", (e) => {
   formSubmit(e);
 });
 
-//* FUNCTION TO CLIC
+//* FUNCTION TO CLIC => CHECK FORM => POST BASKET DATA
 function formSubmit(e) {
   e.preventDefault();
   // CHECK EACH ITEM, AND DATA FORM
@@ -39,14 +36,14 @@ function formSubmit(e) {
     .then((res) => res.json())
     .then((data) => {
       const orderId = data.orderId;
-      const urlConfirm = `./html/confirmation.html`;
-      window.location = urlConfirm + `?orderId=` + orderId;
+      const urlConfirm = `../html/confirmation.html`;
+      window.location.href = urlConfirm + `?orderId=` + orderId;
       return console.log(data);
     })
     .catch((err) => console.log(err));
 }
 
-//* DATA_________________________________________
+//* DATA TO SEND => FORM AND BASKET _________________________________________
 //* GET DATA FORM
 function makeOrder() {
   const form = document.querySelector(".cart__order__form");
@@ -97,7 +94,7 @@ function checkForm() {
 //* CHECK FIRSTNAME LASTNAME CITY
 function checkFirstname() {
   const firstName = document.getElementById("firstName").value;
-  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,15}$/i;
+  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,20}$/i;
   if (regexFirstLastnameAndCity.test(firstName) === false) {
     alert("Votre prénom n'est pas valide");
     return true;
@@ -106,7 +103,7 @@ function checkFirstname() {
 }
 function checkLastname() {
   const lastName = document.getElementById("lastName").value;
-  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,15}$/i;
+  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,20}$/i;
 
   if (regexFirstLastnameAndCity.test(lastName) === false) {
     alert("Votre nom n'est pas valide");
@@ -116,7 +113,7 @@ function checkLastname() {
 }
 function checkCity() {
   const city = document.getElementById("city").value;
-  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,15}$/i;
+  const regexFirstLastnameAndCity = /^[a-zA-Z]{3,20}$/i;
 
   if (regexFirstLastnameAndCity.test(city) === false) {
     alert("Votre ville n'est pas valide");
@@ -127,7 +124,7 @@ function checkCity() {
 //* CHECK ADDRESS
 function checkAddress() {
   const address = document.getElementById("address").value;
-  const regexAddress = /^[a-zA-Z0-9\s,.'-]{4,50}$/i;
+  const regexAddress = /^[a-zA-Z0-9\s,.'-]{4,70}$/i;
   if (regexAddress.test(address) === false) {
     alert("Votre adresse n'est pas valide");
     return true;
