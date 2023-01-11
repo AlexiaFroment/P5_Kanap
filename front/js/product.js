@@ -51,12 +51,9 @@ addToCart.addEventListener("mousedown", () => {
   if (color == null || color === "" || quantity.value <= 0) {
     alert("Vous devez sélectionner une couleur et une quantité");
   } else {
+    alert("Votre article a bien été ajouté au panier :-)");
     addBasket(data);
   }
-  // STYLE BTN DOWN
-  addToCart.style.fontWeight = `bold`;
-  addToCart.style.backgroundColor = `#3f6993`;
-  addToCart.style.transform = `translate(10%)`;
 });
 
 // VALUE AND NEW STYLE OF BTN UP
@@ -66,7 +63,4 @@ addToCart.addEventListener("mouseup", () => {
   colorValue.value = "";
   const qtyValue = document.querySelector("#quantity");
   qtyValue.value = "0";
-  //BTN
-  addToCart.style.fontWeight = ``;
-  addToCart.style.backgroundColor = ``;
 });
