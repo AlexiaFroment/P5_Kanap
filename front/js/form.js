@@ -73,6 +73,7 @@ function getIdBasket() {
     let id = item._id;
     idBasket.push(id);
   });
+
   return idBasket;
 }
 

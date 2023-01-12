@@ -40,7 +40,7 @@ function updateBasket(id, color, newValue) {
   let basket = getBasket();
   const updateItem = basket.find(
     (item) => item._id === id && item.color === color
-  );
+  )
   updateItem.quantity = Number(newValue);
   saveBasket(basket);
   getNumberItem();
